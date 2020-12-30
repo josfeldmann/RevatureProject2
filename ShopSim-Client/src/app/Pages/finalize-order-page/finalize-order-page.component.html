@@ -1,0 +1,11 @@
+<div class="container col-md-8 col-md-offset-3" style="overflow: auto">
+    <form #orderForm="ngForm" novalidate>
+        <!-- PayPalValidation Stuff here -->
+        <input type = "text" name = "cardNumber" placeholder="xxxx-xxxx-xxxx-xxxx" [(ngModel)] = "cardNumber" (onkeyup) = "formatCard()" required><br>
+        <input type="password" name="cvc" placeholder="xxx" required><br>
+        <input type="date" name="targetDate" [(ngModel)] = "targetDate" required><br>
+        <button [disabled]="!orderForm.valid" (click)="onOrderClick()">Complete Order</button>
+        <p>{{message}}</p>
+    </form>
+</div>
+
